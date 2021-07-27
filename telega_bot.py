@@ -12,26 +12,16 @@ def get_messages(message):
     def get_name(message):
         global name
         name = message.text
-
+        
+    match1 = re.fullmatch(r'.*[Пп]рив.*', message.text)
+    match2 = re.fullmatch(r'.*[Хх]ай.*', message.text)
+    match3 = re.fullmatch(r'.*[Зз]драв.*', message.text)
+    
     if message.text == '/help':
         bot.send_message(message.from_user.id, 'Мы сами нуждаемся в помощи')
     elif message.text == '/start':
         bot.send_message(message.from_user.id, 'И тебе не хворать')
-    elif message.text == 'привет':
-        bot.send_message(message.from_user.id, 'Здоровались уже')
-    elif message.text == 'Привет':
-        bot.send_message(message.from_user.id, 'Здоровались уже')
-    elif message.text == 'прив':
-        bot.send_message(message.from_user.id, 'Здоровались уже')
-    elif message.text == 'Прив':
-        bot.send_message(message.from_user.id, 'Здоровались уже')
-    elif message.text == 'Хай':
-        bot.send_message(message.from_user.id, 'Здоровались уже')
-    elif message.text == 'хай':
-        bot.send_message(message.from_user.id, 'Здоровались уже')
-    elif message.text == 'здравствуй':
-        bot.send_message(message.from_user.id, 'Здоровались уже')
-    elif message.text == 'Здравствуй':
+    elif match1 or match2 or match3:
         bot.send_message(message.from_user.id, 'Здоровались уже')
     elif message.text == '/insult':
         bot.send_message(message.from_user.id, 'Как тебя зовут?')
