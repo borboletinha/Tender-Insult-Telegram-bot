@@ -14,9 +14,9 @@ def get_messages(message):
         global name
         name = message.text
         
-    match1 = re.fullmatch(r'.*[Пп]рив.*', message.text)
-    match2 = re.fullmatch(r'.*[Хх]ай.*', message.text)
-    match3 = re.fullmatch(r'.*[Зз]драв.*', message.text)
+    match1 = re.fullmatch(r'.*[Пп][Рр][Ии][Вв].*', message.text)
+    match2 = re.fullmatch(r'.*[Хх][Аа][Йй].*', message.text)
+    match3 = re.fullmatch(r'.*[Зз][Дд][Рр][Аа][Вв].*', message.text)
     
     if message.text == '/help':
         bot.send_message(message.from_user.id, 'Мы сами нуждаемся в помощи')
